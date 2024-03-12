@@ -44,7 +44,7 @@ client.once(Events.ClientReady, (readyClient) => {
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isCommand() || !interaction.isMessageContextMenuCommand())
+  if (!interaction.isCommand() && !interaction.isMessageContextMenuCommand())
     return;
   console.log(interaction.commandName);
   const command = commands.get(interaction.commandName);
